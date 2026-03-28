@@ -7,6 +7,7 @@
 	var $navToggle = $('.nav-toggle');
 	var $preloader = $('#preloader');
 	var $contactForm = $('#contact-form');
+	var $cookieBanner = $('#cookie-banner');
 	var slideIndex = 0;
 	var slideTimer = null;
 	var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
@@ -224,6 +225,24 @@
 		});
 	}
 
+	function initCookieBanner() {
+		if (!$cookieBanner.length)
+			return;
+
+		var cookieChoice = window.localStorage.getItem('fivnet-cookie-consent');
+
+		if (!cookieChoice)
+			window.setTimeout(function() {
+				$cookieBanner.addClass('is-visible');
+			}, 900);
+
+		$cookieBanner.find('.cookie-btn').on('click', function() {
+			var choice = $(this).data('cookie-action');
+			window.localStorage.setItem('fivnet-cookie-consent', choice);
+			$cookieBanner.removeClass('is-visible');
+		});
+	}
+
 	$window.on('load', function() {
 		updateNavState();
 		setActiveNavLink();
@@ -260,6 +279,7 @@
 	initHeroSlider();
 	initReveal();
 	initContactForm();
+	initCookieBanner();
 	updateNavState();
 	setActiveNavLink();
 	updateParallax();
