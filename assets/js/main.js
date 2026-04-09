@@ -191,12 +191,12 @@
 			});
 
 			if (hasError) {
-				setFormStatus('error', 'Preencha todos os campos obrigatorios para continuar.');
+				setFormStatus('error', 'Preencha todos os campos obrigatórios para continuar.');
 				return;
 			}
 
 			if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-				setFormStatus('error', 'Informe um e-mail valido para receber o retorno da equipe.');
+				setFormStatus('error', 'Informe um e-mail válido para receber o retorno da equipe.');
 				return;
 			}
 
@@ -214,7 +214,7 @@
 			})
 			.then(function(data) {
 				if (!data.success)
-					throw new Error(data.message || 'Nao foi possivel enviar sua mensagem.');
+					throw new Error(data.message || 'Não foi possível enviar sua mensagem.');
 
 				form.reset();
 				setFormStatus('success', data.message || 'Mensagem enviada com sucesso.');
@@ -229,7 +229,7 @@
 		if (!$cookieBanner.length)
 			return;
 
-		var cookieChoice = window.localStorage.getItem('fivnet-cookie-consent');
+		var cookieChoice = window.localStorage.getItem('fivgroup-cookie-consent-v2');
 
 		if (!cookieChoice)
 			window.setTimeout(function() {
@@ -238,7 +238,7 @@
 
 		$cookieBanner.find('.cookie-btn').on('click', function() {
 			var choice = $(this).data('cookie-action');
-			window.localStorage.setItem('fivnet-cookie-consent', choice);
+			window.localStorage.setItem('fivgroup-cookie-consent-v2', choice);
 			$cookieBanner.removeClass('is-visible');
 		});
 	}
