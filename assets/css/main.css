@@ -129,6 +129,10 @@ button, input, textarea, select {
 	pointer-events: none;
 }
 
+body.skip-preloader #preloader {
+	display: none;
+}
+
 .preloader-grid,
 .hero-grid {
 	position: absolute;

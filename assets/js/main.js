@@ -8,6 +8,7 @@
 	var $preloader = $('#preloader');
 	var $contactForm = $('#contact-form');
 	var $cookieBanner = $('#cookie-banner');
+	var preloaderStorageKey = 'fivgroup-preloader-shown';
 	var slideIndex = 0;
 	var slideTimer = null;
 	var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
@@ -157,10 +158,33 @@
 		});
 	}
 
+	function wasPreloaderShown() {
+		try {
+			return window.sessionStorage.getItem(preloaderStorageKey) === 'true';
+		} catch (error) {
+			return false;
+		}
+	}
+
+	function markPreloaderShown() {
+		try {
+			window.sessionStorage.setItem(preloaderStorageKey, 'true');
+		} catch (error) {
+			return;
+		}
+	}
+
 	function hidePreloader() {
+		if (wasPreloaderShown()) {
+			$preloader.addClass('is-hidden');
+			$body.removeClass('is-preload');
+			return;
+		}
+
 		window.setTimeout(function() {
 			$preloader.addClass('is-hidden');
 			$body.removeClass('is-preload');
+			markPreloaderShown();
 		}, 700);
 	}
 

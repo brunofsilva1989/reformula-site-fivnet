@@ -57,6 +57,14 @@
 		</script>
 	</head>
 	<body class="is-preload">
+		<script>
+			try {
+				if (window.sessionStorage.getItem('fivgroup-preloader-shown') === 'true') {
+					document.body.classList.remove('is-preload');
+					document.body.classList.add('skip-preloader');
+				}
+			} catch (error) {}
+		</script>
 		<div id="preloader" aria-hidden="true">
 			<div class="preloader-grid"></div>
 			<div class="preloader-core">
