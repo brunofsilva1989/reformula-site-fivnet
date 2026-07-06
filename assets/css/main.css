@@ -612,6 +612,244 @@ body.skip-preloader #preloader {
 	animation: scrollPulse 1.8s ease infinite;
 }
 
+.hero-v2 {
+	--h-bg: #060911;
+	--h-bg-alt: #0a0f1a;
+	--h-panel-border: rgba(255, 255, 255, 0.08);
+	--h-blue: #2496d6;
+	--h-blue-light: #5fc2f0;
+	--h-red: #c13b36;
+	--h-text: #eef1f6;
+	--h-text-soft: #9aa5b8;
+	--h-text-mute: #5c6478;
+	position: relative;
+	background: var(--h-bg);
+	padding-top: calc(var(--nav-height) + 3rem);
+	padding-bottom: 0;
+}
+
+.hero-photo {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+	filter: grayscale(50%) brightness(0.6);
+}
+
+.hero-tint {
+	position: absolute;
+	inset: 0;
+	background: var(--h-blue);
+	mix-blend-mode: color;
+	opacity: 0.55;
+}
+
+.hero-fade {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		100deg,
+		var(--h-bg) 0%,
+		rgba(6, 9, 17, 0.88) 30%,
+		rgba(6, 9, 17, 0.4) 58%,
+		rgba(6, 9, 17, 0.15) 100%
+	);
+}
+
+.hero-inner {
+	position: relative;
+	z-index: 2;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+	align-items: center;
+	padding-bottom: 5.5rem;
+	min-height: 52vh;
+}
+
+.hero-eyebrow {
+	font-family: ui-monospace, "SF Mono", "Roboto Mono", Consolas, monospace;
+	color: var(--h-blue-light);
+	font-size: 0.78rem;
+}
+
+.hero-eyebrow:before {
+	background: linear-gradient(90deg, rgba(95, 194, 240, 0), rgba(95, 194, 240, 1));
+}
+
+.hero-title {
+	font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+	font-weight: 800;
+	font-size: 54px;
+	line-height: 1.08;
+	letter-spacing: -0.02em;
+	color: var(--h-text);
+	margin: 1.1rem 0 1.4rem;
+}
+
+.hero-title-accent {
+	background: linear-gradient(90deg, var(--h-blue-light), var(--h-red));
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.hero-lead {
+	font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+	color: var(--h-text-soft);
+	font-size: 1.08rem;
+	max-width: 46ch;
+	margin-bottom: 2.2rem;
+}
+
+.hero-v2 .hero-actions {
+	margin-bottom: 0;
+}
+
+.hero-btn-outline {
+	position: relative;
+	color: var(--h-text);
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid var(--h-panel-border);
+	border-radius: 12px;
+}
+
+.hero-btn-outline:before {
+	content: none;
+}
+
+.hero-btn-outline:after {
+	content: none;
+}
+
+.hero-btn-outline .corner {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	border: 2px solid var(--h-blue-light);
+	opacity: 0.9;
+	pointer-events: none;
+}
+
+.hero-btn-outline .corner-tl {
+	top: -1px;
+	left: -1px;
+	border-right: 0;
+	border-bottom: 0;
+}
+
+.hero-btn-outline .corner-br {
+	bottom: -1px;
+	right: -1px;
+	border-left: 0;
+	border-top: 0;
+}
+
+.cards-wrap {
+	position: relative;
+	z-index: 4;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.5rem;
+	transform: translateY(70px);
+	margin-bottom: -70px;
+}
+
+.hero-card {
+	display: block;
+	padding: 1.8rem;
+	border-radius: var(--radius-lg);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(239, 247, 255, 0.96));
+	border: 1px solid rgba(24, 98, 175, 0.08);
+	box-shadow: var(--shadow-soft);
+	color: inherit;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 30px 70px rgba(12, 45, 82, 0.18);
+}
+
+.hero-card-icon {
+	display: grid;
+	place-items: center;
+	width: 56px;
+	height: 56px;
+	margin-bottom: 1.1rem;
+	border-radius: 16px;
+	background: linear-gradient(135deg, var(--primary), var(--accent));
+	color: var(--white);
+}
+
+.hero-card-icon .icon:before {
+	font-size: 1.2rem;
+}
+
+.hero-card h3 {
+	margin-bottom: 0.6rem;
+	color: #09233f;
+	font-size: 1.15rem;
+	font-weight: 800;
+}
+
+.hero-card p {
+	margin-bottom: 1rem;
+	color: var(--text-muted);
+	font-size: 0.95rem;
+}
+
+.hero-card-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	color: var(--primary);
+	font-size: 0.82rem;
+	font-weight: 800;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.hero-card-link .icon:before {
+	font-size: 0.75rem;
+}
+
+.hero-v2 a:focus-visible,
+.hero-v2 button:focus-visible {
+	outline: 2px solid var(--h-blue-light);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero-card {
+		transition: none;
+	}
+}
+
+@media (max-width: 940px) {
+	.hero-v2 {
+		padding-top: calc(var(--nav-height) + 2rem);
+		padding-bottom: 2.5rem;
+	}
+
+	.hero-inner {
+		grid-template-columns: 1fr;
+		padding-bottom: 2.5rem;
+		min-height: 0;
+	}
+
+	.hero-title {
+		font-size: 38px;
+	}
+
+	.cards-wrap {
+		grid-template-columns: 1fr;
+		transform: none;
+		margin-bottom: 0;
+		margin-top: 2rem;
+	}
+}
+
 .section {
 	position: relative;
 	padding: 7.5rem 0;
@@ -709,6 +947,40 @@ body.skip-preloader #preloader {
 	box-shadow: 0 30px 70px rgba(12, 45, 82, 0.16);
 }
 
+.card-media {
+	position: relative;
+	margin: -2rem -2rem 1.4rem;
+	height: 170px;
+	overflow: hidden;
+	border-radius: var(--radius-lg) var(--radius-lg) 20px 20px;
+}
+
+.card-media:after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(5, 15, 30, 0.05) 0%, rgba(5, 15, 30, 0.4) 100%);
+}
+
+.card-media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: scale(1.02);
+	transition: transform 0.5s ease;
+}
+
+.service-card:hover .card-media img,
+.differential-card:hover .card-media img {
+	transform: scale(1.08);
+}
+
+.differential-card .card-media-sm {
+	margin: -1.8rem -1.8rem 1.1rem;
+	height: 130px;
+	border-radius: var(--radius-lg) var(--radius-lg) 16px 16px;
+}
+
 .service-icon {
 	display: inline-grid;
 	place-items: center;
@@ -737,15 +1009,11 @@ body.skip-preloader #preloader {
 .section-services .section-header h2,
 .section-services .section-header p,
 .section-services .service-card h3,
-.section-services .service-card p,
-.section-differentials .section-header h2,
-.section-differentials .section-header p,
-.section-differentials .differential-card p {
+.section-services .service-card p {
 	color: var(--white);
 }
 
-.section-services .eyebrow,
-.section-differentials .eyebrow {
+.section-services .eyebrow {
 	color: var(--primary-soft);
 }
 
@@ -879,9 +1147,14 @@ body.skip-preloader #preloader {
 		linear-gradient(180deg, #f4f9ff 0%, #eef5fd 100%);
 }
 
+.section-services {
+	background:
+		radial-gradient(circle at top right, rgba(197, 60, 69, 0.14), transparent 25%),
+		linear-gradient(180deg, #081624 0%, #0c2341 100%);
+}
+
 .about-grid,
-.trust-grid,
-.quote-grid {
+.trust-grid {
 	display: grid;
 	grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
 	gap: 2rem;
@@ -890,7 +1163,6 @@ body.skip-preloader #preloader {
 
 .about-copy h2,
 .trust-copy h2,
-.quote-copy h2,
 .contact-summary h2 {
 	font-family: "Space Grotesk", sans-serif;
 	font-size: clamp(2.2rem, 4vw, 3.8rem);
@@ -901,7 +1173,6 @@ body.skip-preloader #preloader {
 
 .about-copy p,
 .trust-copy p,
-.quote-copy p,
 .contact-summary p {
 	margin-top: 1.2rem;
 	color: var(--text-muted);
@@ -962,12 +1233,15 @@ body.skip-preloader #preloader {
 	line-height: 1.45;
 }
 
-.section-differentials,
-.section-quote,
 .site-footer {
 	background:
 		radial-gradient(circle at top right, rgba(23, 146, 255, 0.18), transparent 25%),
 		linear-gradient(180deg, #081523 0%, #0a1b31 100%);
+}
+
+.section-differentials {
+	background:
+		linear-gradient(180deg, #f4f9ff 0%, #eef5fd 100%);
 }
 
 .differentials-grid {
@@ -979,26 +1253,43 @@ body.skip-preloader #preloader {
 .differential-card {
 	padding: 1.8rem;
 	border-radius: var(--radius-lg);
-	border: 1px solid rgba(255, 255, 255, 0.09);
-	background: rgba(255, 255, 255, 0.06);
-	backdrop-filter: blur(14px);
-	box-shadow: var(--shadow-panel);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(239, 247, 255, 0.96));
+	border: 1px solid rgba(24, 98, 175, 0.08);
+	box-shadow: var(--shadow-soft);
+	overflow: hidden;
+	transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.differential-card:hover {
+	transform: translateY(-6px);
+	border-color: rgba(23, 146, 255, 0.24);
+	box-shadow: 0 30px 70px rgba(12, 45, 82, 0.16);
 }
 
 .differential-card strong {
 	display: block;
 	margin-bottom: 0.7rem;
-	color: var(--white);
+	color: #09233f;
 	font-size: 1.12rem;
 	font-weight: 800;
 }
 
 .differential-card p {
-	color: var(--text-soft);
+	color: var(--text-muted);
 }
 
 .section-trust {
-	background: #f4f9ff;
+	background:
+		radial-gradient(circle at top right, rgba(197, 60, 69, 0.14), transparent 25%),
+		linear-gradient(180deg, #081624 0%, #0c2341 100%);
+}
+
+.section-trust .trust-copy h2 {
+	color: var(--white);
+}
+
+.section-trust .trust-copy p {
+	color: var(--text-soft);
 }
 
 .trust-panel {
@@ -1082,52 +1373,6 @@ body.skip-preloader #preloader {
 	opacity: 1;
 }
 
-.quote-grid {
-	position: relative;
-	z-index: 1;
-}
-
-.quote-copy h2,
-.quote-copy p {
-	color: var(--white);
-}
-
-.quote-card {
-	padding: 2rem;
-	border-radius: var(--radius-xl);
-	border: 1px solid rgba(255, 255, 255, 0.12);
-	background:
-		linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05)),
-		rgba(5, 17, 31, 0.56);
-	backdrop-filter: blur(18px);
-	box-shadow: var(--shadow-panel);
-}
-
-.quote-pill {
-	display: inline-flex;
-	margin-bottom: 1rem;
-	padding: 0.45rem 0.8rem;
-	border-radius: 999px;
-	background: rgba(197, 60, 69, 0.14);
-	color: var(--accent-soft);
-	font-size: 0.8rem;
-	font-weight: 800;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-}
-
-.quote-card h3 {
-	color: var(--white);
-	font-size: 1.8rem;
-	font-weight: 800;
-	line-height: 1.2;
-}
-
-.quote-card p {
-	margin-top: 0.9rem;
-	color: var(--text-soft);
-}
-
 .section-contact {
 	background: #f4f9ff;
 	padding-top: 0;
@@ -1152,8 +1397,7 @@ body.skip-preloader #preloader {
 	align-items: stretch;
 }
 
-.contact-item,
-.contact-action {
+.contact-item {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
@@ -1181,7 +1425,20 @@ body.skip-preloader #preloader {
 }
 
 .contact-action {
+	display: flex;
+	align-items: center;
 	justify-content: center;
+	gap: 1rem;
+	padding: 1rem 1.1rem;
+	border-radius: 22px;
+	background: var(--primary);
+	box-shadow: 0 18px 38px rgba(15, 76, 151, 0.24);
+}
+
+.contact-action .button-primary {
+	color: var(--primary-strong);
+	background: var(--white);
+	box-shadow: none;
 }
 
 .contact-action .button {
@@ -1212,6 +1469,46 @@ body.skip-preloader #preloader {
 
 .footer-logo-power {
 	max-width: 260px;
+}
+
+.footer-logo-row {
+	display: flex;
+	align-items: center;
+	gap: 1.4rem;
+	flex-wrap: wrap;
+	margin-bottom: 1.3rem;
+}
+
+.footer-logo-link {
+	display: inline-flex;
+	align-items: center;
+}
+
+.footer-brand-logo {
+	height: 32px;
+	width: auto;
+	max-width: 140px;
+	object-fit: contain;
+	opacity: 0.72;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-brand-logo-primary {
+	height: 42px;
+	max-width: 170px;
+	opacity: 1;
+}
+
+.footer-logo-link:hover .footer-brand-logo {
+	opacity: 1;
+	transform: translateY(-2px);
+}
+
+.footer-logo-divider {
+	width: 1px;
+	height: 32px;
+	background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+	flex-shrink: 0;
 }
 
 .footer-brand p,
@@ -1476,7 +1773,6 @@ body.skip-preloader #preloader {
 .page-side-card,
 .content-card,
 .contact-card,
-.quote-card,
 .service-detail-card,
 .client-story-card,
 .testimonial-card {
@@ -1633,6 +1929,7 @@ body.skip-preloader #preloader {
 	border: 1px solid rgba(24, 98, 175, 0.08);
 	box-shadow: var(--shadow-soft);
 	overflow: hidden;
+	scroll-margin-top: var(--nav-height);
 }
 
 .service-detail-media {
@@ -1993,7 +2290,6 @@ body.skip-preloader #preloader {
 	.cta-grid,
 	.about-grid,
 	.trust-grid,
-	.quote-grid,
 	.page-hero-content,
 	.page-grid,
 	.contact-page-grid {
@@ -2294,4 +2590,196 @@ body.skip-preloader #preloader {
 	.certification-panel {
 		padding: 1.75rem;
 	}
+}
+
+/* ============================================================
+   FIX — Hero v2 (Home): gutter, cards escuros e badges sem sobrepor
+   ============================================================ */
+
+/* A) Gutter esquerdo/direito do hero (estava colado na borda) */
+.hero.hero-v2 {
+	padding: 96px 48px 0 !important;
+}
+.hero-v2 .hero-inner {
+	max-width: 1320px;
+	margin: 0 auto;
+	padding: 0 !important; /* remove padding duplicado herdado de .container */
+}
+.hero-v2 .cards-wrap {
+	max-width: 1320px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 !important;
+}
+
+/* B) Cards do hero — precisam ser escuros/translúcidos, não brancos */
+.hero-v2 .hero-card {
+	background: rgba(14, 21, 34, 0.94) !important;
+	border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.hero-v2 .hero-card h3 {
+	color: #eef1f6 !important;
+}
+.hero-v2 .hero-card p {
+	color: #9aa5b8 !important;
+}
+.hero-v2 .hero-card-link {
+	color: #5fc2f0 !important;
+}
+.hero-v2 .hero-card:hover {
+	border-color: rgba(36, 150, 214, 0.4) !important;
+}
+.hero-v2 .hero-card:hover .hero-card-link {
+	color: #ffffff !important;
+}
+
+.hero-v2 .cards-wrap {
+	transform: translateY(24%) !important;
+	position: relative;
+	z-index: 5;
+}
+
+@media (max-width: 940px) {
+	.hero.hero-v2 {
+		padding: 56px 20px 0 !important;
+	}
+	.hero-v2 .cards-wrap {
+		transform: none !important;
+		grid-template-columns: 1fr;
+		margin-top: 32px;
+	}
+}
+
+/* ============================================================
+   FIX — Seção de Contato: fundo azul + divisão com a seção de Clientes
+   ============================================================ */
+
+/* Divisão clara entre a seção de Clientes (clara) e a de Contato (escura) */
+.section-contact {
+	background:
+		radial-gradient(circle at top right, rgba(197, 60, 69, 0.14), transparent 25%),
+		linear-gradient(180deg, #081624 0%, #0c2341 100%) !important;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Card grande do contato — fundo azul escuro do site, não branco */
+.contact-strip {
+	background: linear-gradient(135deg, #123a63, #0b2447) !important;
+	border-radius: 16px;
+	box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.5);
+}
+
+/* Textos precisam virar claros, já que o fundo deixou de ser branco */
+.contact-summary .eyebrow {
+	color: #5fc2f0 !important;
+}
+.contact-summary h2 {
+	color: #eef1f6 !important;
+}
+.contact-summary p {
+	color: #b9c3d4 !important;
+}
+
+.contact-item,
+.contact-action {
+	background: rgba(255, 255, 255, 0.06) !important;
+	border: 1px solid rgba(255, 255, 255, 0.14) !important;
+	box-shadow: none !important;
+}
+.contact-item strong {
+	color: #ffffff !important;
+}
+.contact-item span {
+	color: #c7d0e0 !important;
+}
+.contact-item .icon:before {
+	color: #5fc2f0 !important;
+}
+
+/* Botão "Solicitar Orçamento" — manter o gradiente azul/vermelho já usado no resto do site */
+.contact-action .button-primary {
+	background: linear-gradient(120deg, #2496d6 0%, #c13b36 100%) !important;
+	color: #ffffff !important;
+	border: none !important;
+}
+
+/* ============================================================
+   FIX — Nav (logo colado à esquerda) + Footer (fundo branco, logos maiores)
+   ============================================================ */
+
+/* 1) NAV — logo colado à esquerda, menu colado à direita */
+nav#nav .container.nav-container {
+	width: 100% !important;
+	max-width: 100% !important;
+	padding: 0 160px !important;
+	margin: 0 !important;
+}
+
+nav#nav .brand {
+	margin-left: 0 !important;
+}
+
+nav#nav .nav-menu {
+	margin-right: 0;
+}
+
+/* 2) FOOTER — fundo branco + logos maiores */
+.site-footer {
+	background: #ffffff !important;
+	border-top: 1px solid rgba(15, 27, 45, 0.08);
+}
+
+/* Logos maiores (mantendo a proporção: Fivnet em destaque sobre AC Power) */
+.footer-brand-logo {
+	height: 56px !important;
+	width: auto !important;
+	max-width: 220px !important;
+}
+.footer-brand-logo-primary {
+	height: 72px !important;
+	max-width: 260px !important;
+}
+.footer-logo-row {
+	gap: 20px;
+	align-items: center;
+}
+.footer-logo-divider {
+	background: rgba(15, 27, 45, 0.15) !important;
+	height: 32px;
+}
+
+/* Textos e links — de claro (tema escuro) para escuro (tema claro) */
+.footer-brand p {
+	color: #5b6472 !important;
+}
+.footer-column h3 {
+	color: #0f1b2d !important;
+}
+.footer-column ul li a {
+	color: #4a5568 !important;
+}
+.footer-column ul li a:hover {
+	color: #2496d6 !important;
+}
+.footer-contact-list li span {
+	color: #4a5568 !important;
+}
+.footer-contact-list .icon:before {
+	color: #2496d6 !important;
+}
+.footer-contact-list li a {
+	color: #4a5568 !important;
+}
+.footer-contact-list li a:hover {
+	color: #2496d6 !important;
+}
+
+/* Rodapé (copyright) */
+.footer-bottom {
+	border-top: 1px solid rgba(15, 27, 45, 0.08) !important;
+}
+.footer-bottom p {
+	color: #8b95a8 !important;
 }
