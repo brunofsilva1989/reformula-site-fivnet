@@ -1865,6 +1865,20 @@ body.skip-preloader #preloader {
 	box-shadow: var(--shadow-soft);
 }
 
+.content-card-media {
+	border-radius: 12px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	aspect-ratio: 16 / 10;
+}
+
+.content-card-media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
 .content-card h3 {
 	margin-bottom: 0.7rem;
 	color: #09233f;
