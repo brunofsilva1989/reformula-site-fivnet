@@ -1520,7 +1520,7 @@ body.skip-preloader #preloader {
 .footer-brand-logo {
 	height: 42px;
 	width: auto;
-	max-width: 170px;
+	max-width: 230px;
 	object-fit: contain;
 	opacity: 0.72;
 	transition: opacity 0.3s ease, transform 0.3s ease;
@@ -1528,7 +1528,7 @@ body.skip-preloader #preloader {
 
 .footer-brand-logo-primary {
 	height: 42px;
-	max-width: 170px;
+	max-width: 230px;
 	opacity: 1;
 }
 
@@ -2814,13 +2814,13 @@ nav#nav .nav-menu {
 
 /* Logos maiores (mantendo a proporção: Fivnet em destaque sobre AC Power) */
 .footer-brand-logo {
-	height: 56px !important;
+	height: 40px !important;
 	width: auto !important;
-	max-width: 220px !important;
+	max-width: 260px !important;
 }
 .footer-brand-logo-primary {
-	height: 56px !important;
-	max-width: 220px !important;
+	height: 42px !important; /* ~5% a mais, compensa o grafismo do FIVNET */
+	max-width: 260px !important;
 }
 .footer-logo-row {
 	gap: 20px;
@@ -2829,6 +2829,21 @@ nav#nav .nav-menu {
 .footer-logo-divider {
 	background: rgba(15, 27, 45, 0.15) !important;
 	height: 32px;
+}
+
+@media screen and (max-width: 600px) {
+	.footer-logo-row {
+		flex-wrap: nowrap !important;
+		gap: 12px !important;
+	}
+	.footer-brand-logo,
+	.footer-brand-logo-primary {
+		height: 34px !important;
+		max-width: none !important;
+	}
+	.footer-logo-divider {
+		height: 24px;
+	}
 }
 
 /* Textos e links — de claro (tema escuro) para escuro (tema claro) */
