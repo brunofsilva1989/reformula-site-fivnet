@@ -1520,7 +1520,7 @@ body.skip-preloader #preloader {
 .footer-brand-logo {
 	height: 40px;
 	width: auto;
-	max-width: 230px;
+	max-width: 280px;
 	object-fit: contain;
 	opacity: 0.72;
 	transition: opacity 0.3s ease, transform 0.3s ease;
@@ -1528,7 +1528,7 @@ body.skip-preloader #preloader {
 
 .footer-brand-logo-primary {
 	height: 40px;
-	max-width: 230px;
+	max-width: 280px;
 	opacity: 1;
 	/* transform: translateY(-4px); */
 }
@@ -2812,20 +2812,26 @@ nav#nav .nav-menu {
 	border-top: 1px solid rgba(15, 27, 45, 0.08);
 }
 
+/* Reconfigurar grid do footer para desktop com logos maiores */
+.site-footer .footer-grid {
+	grid-template-columns: 1.1fr 0.4fr 1.5fr;
+	gap: 9rem;
+}
+
 /* Logos maiores (mantendo a proporção: Fivnet em destaque sobre AC Power) */
 .footer-brand-logo {
-	height: 40px !important;
+	height: 80px !important;
 	width: auto !important;
-	max-width: 260px !important;
+	max-width: 320px !important;
 }
 .footer-brand-logo-primary {
-	height: 40px !important; /* ~5% a mais, compensa o grafismo do FIVNET */
-	max-width: 260px !important;
-	transform: translateY(-4px);
+	height: 80px !important;
+	max-width: 320px !important;
 }
 .footer-logo-row {
-	gap: 20px;
+	gap: 40px;
 	align-items: center;
+	flex-wrap: nowrap;
 }
 .footer-logo-divider {
 	background: rgba(15, 27, 45, 0.15) !important;
@@ -2833,6 +2839,10 @@ nav#nav .nav-menu {
 }
 
 @media screen and (max-width: 600px) {
+	.site-footer .footer-grid {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
 	.footer-logo-row {
 		flex-wrap: nowrap !important;
 		gap: 12px !important;
@@ -2841,7 +2851,6 @@ nav#nav .nav-menu {
 	.footer-brand-logo-primary {
 		height: 34px !important;
 		max-width: none !important;
-		transform: translateY(-4px) !important;
 	}
 	.footer-logo-divider {
 		height: 24px;
