@@ -1518,7 +1518,7 @@ body.skip-preloader #preloader {
 }
 
 .footer-brand-logo {
-	height: 42px;
+	height: 40px;
 	width: auto;
 	max-width: 230px;
 	object-fit: contain;
@@ -1527,14 +1527,14 @@ body.skip-preloader #preloader {
 }
 
 .footer-brand-logo-primary {
-	height: 42px;
+	height: 40px;
 	max-width: 230px;
 	opacity: 1;
+	/* transform: translateY(-4px); */
 }
 
 .footer-logo-link:hover .footer-brand-logo {
-	opacity: 1;
-	transform: translateY(-2px);
+	opacity: 1;	
 }
 
 .footer-logo-divider {
@@ -2819,8 +2819,9 @@ nav#nav .nav-menu {
 	max-width: 260px !important;
 }
 .footer-brand-logo-primary {
-	height: 42px !important; /* ~5% a mais, compensa o grafismo do FIVNET */
+	height: 40px !important; /* ~5% a mais, compensa o grafismo do FIVNET */
 	max-width: 260px !important;
+	transform: translateY(-4px);
 }
 .footer-logo-row {
 	gap: 20px;
@@ -2840,6 +2841,7 @@ nav#nav .nav-menu {
 	.footer-brand-logo-primary {
 		height: 34px !important;
 		max-width: none !important;
+		transform: translateY(-4px) !important;
 	}
 	.footer-logo-divider {
 		height: 24px;
